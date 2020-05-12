@@ -10,9 +10,9 @@ export const Register = () => {
         event.preventDefault();
         debugger
         console.log(registerObject);
-            axios.post('http://localhost:3333/authentication/register', registerObject)
-            .then(res => {
-                // setRegisterObject(res.data);
+            axios.post('http://localhost:3333/auth/register', registerObject)
+            .then(response => {
+                setRegisterObject(response.data);
                 history.push('/login');
             })  
             .catch(error => {
@@ -40,7 +40,7 @@ export const Register = () => {
     return (
         <div>
             {/* Scope for using Material UI & Formki here */}
-            <form>
+            <form onSubmit={event => handleSubmit(event)} >
                 <h1>Register:</h1>
                 <label>First Name:</label>
                 <Input 
@@ -95,7 +95,7 @@ export const Register = () => {
                 onChange={handleChange}
                 />
                 <br/>
-                <Button onSubmit={event => handleSubmit(event)}>Register</Button>
+                <Button type="submit">Register</Button>
             </form>
         </div>
     )
