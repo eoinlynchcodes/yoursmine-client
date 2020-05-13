@@ -26,9 +26,9 @@ function App() {
           <Login />
         </Route>
 
-        {/* <Route exact path='/sellerDashboard'>
-          <SellerDashboard/>
-        </Route> */}
+        <Route exact path='/sellerDashboard'>
+          {/* <SellerDashboard/> */}
+        </Route>
 
         <Route exact path='/marketplace'>
           <Marketplace/>
