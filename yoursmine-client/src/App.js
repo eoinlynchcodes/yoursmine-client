@@ -5,6 +5,7 @@ import { Navigation } from "./components/Navigation";
 import { Login } from "./components/Login";
 // import { SellerDashboard } from './components/SellerDashboard';
 import { Marketplace } from './components/Marketplace';
+import { HowItWorks } from "./components/HowItWorks";
 
 function App() {
   return (
@@ -31,6 +32,11 @@ function App() {
 
         <Route exact path='/marketplace'>
           <Marketplace/>
+        </Route>
+
+        <Route exact path='/howitworks'>
+          <Navigation/>
+          <HowItWorks/>
         </Route>
 
       </Router>
