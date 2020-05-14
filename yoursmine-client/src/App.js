@@ -3,7 +3,7 @@ import { Route, BrowserRouter as Router } from "react-router-dom";
 import { Register } from "./components/Register";
 import { Navigation } from "./components/Navigation";
 import { Login } from "./components/Login";
-// import { SellerDashboard } from './components/SellerDashboard';
+import { SellerDashboard } from './components/SellerDashboard';
 import { Marketplace } from './components/Marketplace';
 import { HowItWorks } from "./components/HowItWorks";
 
@@ -27,7 +27,7 @@ function App() {
         </Route>
 
         <Route exact path='/sellerDashboard'>
-          {/* <SellerDashboard/> */}
+          <SellerDashboard/>
         </Route>
 
         <Route exact path='/marketplace'>
