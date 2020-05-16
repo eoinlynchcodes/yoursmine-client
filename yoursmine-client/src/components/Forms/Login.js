@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { Input } from '@material-ui/core';
 import { Button } from '@material-ui/core';
+
 export const Login = () => {
 
     const [ loginCredentials, setLoginCredentials ] = useState({
@@ -25,8 +26,8 @@ export const Login = () => {
         console.log(loginCredentials);
         axios.post('http://localhost:3333/api/auth/login', loginCredentials)
         .then(response => {
-            debugger
             setLoginCredentials(response.data);
+            localStorage.setItem(response.data.userID, 'userID');
             history.push('/sellerDashboard');
         })
         .catch(error => {

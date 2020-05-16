@@ -1,7 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import '../components/components.css';
-import { Login } from './Login';
+import '../components.css';
 
 export const Navigation = () => {
 
