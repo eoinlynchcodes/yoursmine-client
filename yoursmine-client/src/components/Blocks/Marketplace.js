@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { ClothesFrame } from '../Containers/ClothesFrame';
 
 export const Marketplace = () => {
 
@@ -19,12 +20,9 @@ export const Marketplace = () => {
     return (
         <div>
             <h1>This is the Marketplace</h1>
-            {
-                console.log(clothes)
+            { clothes.map(item => {
+               return <ClothesFrame item={item} /> })          
             }
-            {/* {
-                clothes.map
-            } */}
         </div>
     )
 }
