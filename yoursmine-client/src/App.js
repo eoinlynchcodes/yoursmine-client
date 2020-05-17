@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import { Register } from "./components/Forms/Register";
-import { Navigation } from "./components/Blocks/Navigation";
+import { Navigation } from "./components/Blocks/LoggedOutNav";
 import { Login } from "./components/Forms/Login";
 import { SellerDashboard } from './components/Blocks/SellerDashboard';
 import { Marketplace } from './components/Blocks/Marketplace';

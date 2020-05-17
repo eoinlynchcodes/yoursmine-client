@@ -28,7 +28,6 @@ export const AddClothesForm = () => {
     event.preventDefault();
     axios.post('http://localhost:3333/api/clothes/addClothes', clothesItem)
     .then(response => {
-        console.log(response);
         history.push('/sellerdashboard');
     })
     .catch(error => {

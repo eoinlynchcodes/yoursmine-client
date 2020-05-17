@@ -10,7 +10,6 @@ export const Marketplace = () => {
         axios.get('http://localhost:3333/api/clothes/allClothes')
         .then(res => {
             setClothes(res.data);
-            console.log(res.data);
         })
         .catch(error => {
             console.log(error);
@@ -20,8 +19,8 @@ export const Marketplace = () => {
     return (
         <div>
             <h1>This is the Marketplace</h1>
-            { clothes.map(item => {
-               return <ClothesFrame item={item} /> })          
+            { clothes.map((item, key) => {
+               return <ClothesFrame item={item} key={key} /> })          
             }
         </div>
     )
