@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import { Register } from "./components/Forms/Register";
 import { Navigation } from "./components/Blocks/LoggedOutNav";
@@ -6,10 +7,36 @@ import { Login } from "./components/Forms/Login";
 import { SellerDashboard } from './components/Blocks/SellerDashboard';
 import { Marketplace } from './components/Blocks/Marketplace';
 import { HowItWorks } from "./components/Blocks/HowItWorks";
+import { Checkout } from './components/Pages/Checkout';
+
+import { CartContext } from "./contexts/CartContext";
+import { ProductContext } from "./contexts/ProductContext";
+
 
 function App() {
+
+  const [ clothes, setClothes ] = useState([]);
+  useEffect(() => {
+      axios.get('http://localhost:3333/api/clothes/allClothes')
+      .then(res => {
+          setClothes(res.data);
+          console.log(res.data);
+      })
+      .catch(error => {
+          console.log(error);
+      })
+  }, []);
+
+  const [ cart, setCart ] = useState([]);
+  const addItem = item => {
+    setCart([...cart, item]);
+    console.log(cart);
+  }
+
   return (
     <div>
+      <ProductContext.Provider value={{clothes, addItem}} >  
+        <CartContext.Provider value={cart}>
       <Router>
         <Route exact path="/">
           <Navigation />
@@ -17,7 +44,7 @@ function App() {
           <Marketplace/>
         </Route>
 
-        <Route exact path="/register">
+        <Route exact path="/signup">
           <Navigation />
           <Register />
         </Route>
@@ -39,8 +66,14 @@ function App() {
           <Navigation/>
           <HowItWorks/>
         </Route>
+        
+        <Route exact path="/checkout">
+          <Checkout/>
+        </Route>
 
       </Router>
+      </CartContext.Provider>  
+      </ProductContext.Provider>
     </div>
   );
 }

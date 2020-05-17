@@ -7,6 +7,7 @@ export const AddClothesForm = () => {
   const [clothesItem, setClothesItem] = useState({
     userID: 1,
     gender: "",
+    price: "",
     brand: "",
     condition: "",
     itemType: "",
@@ -47,6 +48,15 @@ export const AddClothesForm = () => {
           onChange={(event) => onChange(event)}
         />
         <br />
+
+        <label>Price:</label>
+        <input
+        placeholder="Price:"
+        name="price"
+        type="number"
+        onChange={(event) => onChange(event)}
+        />
+        <br/>
 
         <label>Brand:</label>
         <input

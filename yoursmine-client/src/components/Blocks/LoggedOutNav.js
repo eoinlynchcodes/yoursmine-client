@@ -1,39 +1,28 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import './navigation.css';
+import { CartContext } from '../../contexts/CartContext';
 
-export const Navigation = () => {
+export const Navigation = (CartContext) => {
 
-    const history = useHistory();
-
-    const goHome = () => {
-        history.push('/')
-    };
-
-    const register = () => {
-        history.push('/register')
-    };
-    
-    const howitworks = () => {
-        history.push('/howitworks')
-    };
-
-    const login = () => {
-        history.push('/login');
-    };
+    // const cart = useContext(CartContext);
+console.log(CartContext);
 
     return (
         <div>
             <nav>
-                <h3 onClick={event => howitworks(event)}>How It Works</h3>
-                <h3 onClick={event => goHome(event)}>Yours-Mine</h3>
+                <NavLink to="/howitworks"><h3>How It Works</h3></NavLink>
+                <NavLink to="/" >Yours-Mine</NavLink>
                 <div className="dropdown">
                 <h3 className="dropbtn">Sell Your Clothes</h3>
                 <div className="dropdown-content">
-                <h3 onClick={event => login(event)} >LogIn</h3>                    
-                <h3 onClick={event => register(event)} >Sign Up</h3>
+                    <NavLink to="/login">Log In</NavLink>
+                    <NavLink to="/signup">Sign Up</NavLink>
                 </div>
                 </div>
+                <NavLink to="/checkout">
+                    Cart <span>{CartContext.length}</span>
+                    </NavLink>
             </nav>
         </div>
     )
