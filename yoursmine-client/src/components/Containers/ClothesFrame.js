@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../components.css';
+import { ClothesContext } from '../../contexts/ClothesContext';
 
-export const ClothesFrame = (item) => {
+export const ClothesFrame = ( ) => {
 
-    const clothing = item.item;
+    const { clothes, addItem } = useContext(ClothesContext);
+    console.log(clothes + 'clothes');
 
     return (
         <div className="clothesFrameSurround">
-            <p>Brand:</p>
+            {/* <p>Brand:</p>
             <h4> { clothing.brand } </h4>
             <p>Condition</p>
             <h4> { clothing.condition }</h4>
@@ -24,7 +26,7 @@ export const ClothesFrame = (item) => {
             <p>Size:</p>
             <h4> { clothing.size } </h4>
             <button>Add to Basket</button>
-            <br/><br/>
+            <br/><br/> */}
         </div>
     );
 }

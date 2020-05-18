@@ -1,12 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './navigation.css';
-import { CartContext } from '../../contexts/CartContext';
 
-export const Navigation = (CartContext) => {
+export const Navigation = () => {
 
-    // const cart = useContext(CartContext);
-console.log(CartContext);
 
     return (
         <div>
@@ -21,7 +18,8 @@ console.log(CartContext);
                 </div>
                 </div>
                 <NavLink to="/checkout">
-                    Cart <span>{CartContext.length}</span>
+                    Cart 
+                    {/* <span>{CartContext.length}</span> */}
                     </NavLink>
             </nav>
         </div>
