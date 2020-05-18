@@ -1,20 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { ClothesFrame } from '../Containers/ClothesFrame';
+import { ClothesContext } from '../../contexts/ClothesContext';
 
 export const Marketplace = () => {
 
-    const [ clothes, setClothes ] = useState([]);
+ const { clothes, addItem } = useContext(ClothesContext);
 
-    useEffect(() => {
-        axios.get('http://localhost:3333/api/clothes/allClothes')
-        .then(res => {
-            setClothes(res.data);
-        })
-        .catch(error => {
-            console.log(error);
-        })
-    }, []);
+ console.log(clothes);
 
     return (
         <div>
