@@ -21,7 +21,6 @@ function App() {
       .get("http://localhost:3333/api/clothes/allClothes")
       .then((res) => {
         setClothes(res.data);
-        console.log(res.data);
       })
       .catch((error) => {
         console.log(error);
@@ -32,8 +31,6 @@ function App() {
   const addItem = (item) => {
     setCart([...cart, item]);
   };
-
-  console.log(clothes);
 
   return (
     <div>

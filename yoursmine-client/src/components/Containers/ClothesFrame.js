@@ -4,11 +4,7 @@ import { ClothesContext } from '../../contexts/ClothesContext';
 
 export const ClothesFrame = ( propsFromMarketPlace ) => {
 
-
-    console.log(propsFromMarketPlace.item);
-
     const item = propsFromMarketPlace.item;
-
 
     return (
         <div className="clothesFrameSurround">
@@ -22,7 +18,7 @@ export const ClothesFrame = ( propsFromMarketPlace ) => {
             <h4> { item.gender }</h4>
             <p>Brand</p>
             <h4> { item.brand }</h4>
-            <o>Item Type:</o>
+            <p>Item Type:</p>
             <h4> { item.itemType }</h4>
 
             <h4> { item.image } </h4>

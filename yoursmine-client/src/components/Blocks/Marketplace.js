@@ -7,8 +7,6 @@ export const Marketplace = () => {
 
  const { clothes, addItem } = useContext(ClothesContext);
 
- console.log(clothes);
-
     return (
         <div>
             <h1>This is the Marketplace</h1>
