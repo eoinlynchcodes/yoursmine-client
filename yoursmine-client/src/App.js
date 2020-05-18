@@ -28,6 +28,7 @@ function App() {
   }, []);
 
   const [cart, setCart] = useState([]);
+  
   const addItem = (item) => {
     setCart([...cart, item]);
   };
@@ -67,8 +68,10 @@ function App() {
           </Route>
 
           <Route exact path="/checkout">
+            <Navigation />
             <Checkout />
           </Route>
+
         </CartContext.Provider>
       </ClothesContext.Provider>
     </div>

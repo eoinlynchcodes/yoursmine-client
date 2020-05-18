@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import '../components.css';
-import { ClothesContext } from '../../contexts/ClothesContext';
 
 export const ClothesFrame = ( propsFromMarketPlace ) => {
 
+    // item comes from Marketplace where a map function runs through the array.
     const item = propsFromMarketPlace.item;
+
+
 
     return (
         <div className="clothesFrameSurround">
@@ -24,7 +26,9 @@ export const ClothesFrame = ( propsFromMarketPlace ) => {
             <h4> { item.image } </h4>
             <p>Size:</p>
             <h4> { item.size } </h4>
-            <button>Add to Basket</button>
+            <button 
+            onClick={() => propsFromMarketPlace.addItem(propsFromMarketPlace.item) }
+            >Add to Basket</button>
             <br/><br/>
         </div>
     );
