@@ -29,7 +29,7 @@ export const DeliveryAddress = () => {
                 <input 
                 placeholder="Phone Number"
                 /><br/>
-                <button>Add</button>
+                <button>Checkout</button>
             </form>
         </div>
     )

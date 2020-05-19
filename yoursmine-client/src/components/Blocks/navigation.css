@@ -31,9 +31,6 @@
     display: block;
   }
 
-  NavLink{
-    text-decoration: none;
-  }
   
   /* Change color of dropdown links on hover */
   .dropdown-content NavLink:hover {

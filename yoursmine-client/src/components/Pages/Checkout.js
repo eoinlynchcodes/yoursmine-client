@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import './checkout.css';
 import { CartContext } from '../../contexts/CartContext';
 import { CartItemFrame } from '../Containers/CartItemFrame';
 import { DeliveryAddress } from '../Forms/DeliveryAddress';
@@ -9,7 +10,7 @@ export const Checkout = () => {
     console.log(cart);
 
     return (
-        <div>
+        <div className="container">
             
         <h1>Order Overview</h1>
             {
