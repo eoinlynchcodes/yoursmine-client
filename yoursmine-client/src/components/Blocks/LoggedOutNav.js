@@ -10,18 +10,18 @@ export const Navigation = () => {
     return (
         <div>
             <nav>
-                <NavLink to="/howitworks"><h3>How It Works</h3></NavLink>
-                <NavLink to="/" >Yours-Mine</NavLink>
+                <NavLink className="navLink" to="/howitworks"><h3>How It Works</h3></NavLink>
+                <NavLink className="navLink" to="/" >Yours-Mine</NavLink>
                 <div className="dropdown">
                 <h3 className="dropbtn">Sell Your Clothes</h3>
                 <div className="dropdown-content">
-                    <NavLink to="/login">Log In</NavLink>
-                    <NavLink to="/signup">Sign Up</NavLink>
+                    <NavLink className="navLink" to="/login">Log In</NavLink>
+                    <NavLink className="navLink" to="/signup">Sign Up</NavLink>
                 </div>
                 </div>
-                <NavLink to="/checkout">
+                <NavLink className="navLink" to="/checkout">
                     Cart 
-                    <span>{ cart.length }</span>
+                    <span>{' ' + cart.length }</span>
                     </NavLink>
             </nav>
         </div>
