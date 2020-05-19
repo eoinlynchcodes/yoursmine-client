@@ -1,9 +1,12 @@
 import React, { useState, useContext } from 'react';
 import './checkout.css';
+import { useHistory } from 'react-router-dom';
 import { CartContext } from '../../contexts/CartContext';
 import { CartItemFrame } from '../Containers/CartItemFrame';
 
 export const Checkout = () => {
+
+    const history = useHistory();
 
     const cart = useContext(CartContext);
 
@@ -18,6 +21,7 @@ export const Checkout = () => {
         buyerPhone: ''
     });
 
+    const orderAndSellerData = { ...buyerAddress, ...cart};
     const changeHandler = (event) => {
         setBuyerAddress({
             ...buyerAddress,
@@ -28,7 +32,8 @@ export const Checkout = () => {
     const submitHandler = (event) => {
         event.preventDefault();
         debugger
-        console.log(buyerAddress);
+        console.log(orderAndSellerData);
+        history.push('/payment');
     }
 
     return (
