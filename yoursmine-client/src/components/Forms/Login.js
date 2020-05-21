@@ -3,10 +3,11 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { Input } from '@material-ui/core';
 import { Button } from '@material-ui/core';
+
 export const Login = () => {
 
     const [ loginCredentials, setLoginCredentials ] = useState({
-        username: '',
+        emailAddress: '',
         password: ''
     });
 
@@ -21,11 +22,12 @@ export const Login = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        debugger
         console.log(loginCredentials);
-        axios.post('http://localhost:5000/api/authentication/login', loginCredentials)
+        axios.post('http://localhost:3333/api/auth/login', loginCredentials)
         .then(response => {
-            debugger
             setLoginCredentials(response.data);
+            localStorage.setItem(response.data.userID, 'userID');
             history.push('/sellerDashboard');
         })
         .catch(error => {
@@ -37,12 +39,12 @@ export const Login = () => {
         <div>
             <form onSubmit={event => handleSubmit(event)}>
             <h3>Login. Start Selling.</h3>
-            <label>Username:</label>
+            <label>Email Address:</label>
                 <Input 
-                placeholder="Username"
+                placeholder="Email Address:"
                 type="text"
-                name="username"
-                value={loginCredentials.username}
+                name="emailAddress"
+                value={loginCredentials.emailAddress}
                 onChange={event => handleChange(event)}
                 />
                 <br/>
@@ -56,7 +58,8 @@ export const Login = () => {
                 onChange={event => handleChange(event)}
                 />
                 <br/>
-                <Button color="primary">Login</Button>
+
+                <Button type="submit" color="primary">Login</Button>
             </form>
         </div>
     )
