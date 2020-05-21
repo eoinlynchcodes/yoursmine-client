@@ -97,6 +97,11 @@ export const Checkout = () => {
                 onChange={event => changeHandler(event)}
                 /><br/>
 
+                {/* <label>Do you want to receive marketing emails?</label>
+                <input 
+                type="checkbox"
+                /><br/> */}
+
                 <button>Checkout</button>
             </form> : <h1>Your Basket is empty m8!</h1> }
         </div>
