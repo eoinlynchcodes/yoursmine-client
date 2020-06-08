@@ -13,7 +13,7 @@ export const AddClothesForm = () => {
     itemType: "",
     size: "",
     description: "",
-    image: "yes.jpg",
+    image: "",
   });
 
   const onChange = (event) => {
@@ -27,6 +27,8 @@ export const AddClothesForm = () => {
 
   const submitThis = (event) => {
     event.preventDefault();
+    debugger
+    console.log(clothesItem);
     axios.post('http://localhost:3333/api/clothes/addClothes', clothesItem)
     .then(response => {
         history.push('/sellerdashboard');
@@ -40,7 +42,6 @@ export const AddClothesForm = () => {
     <div>
       <form onSubmit={(event) => submitThis(event)}>
         <h1>Add Clothes</h1>
-
         <label>Gender:</label>
         <input
           placeholder="Gender:"
@@ -48,7 +49,6 @@ export const AddClothesForm = () => {
           onChange={(event) => onChange(event)}
         />
         <br />
-
         <label>Price:</label>
         <input
         placeholder="Price:"
@@ -57,7 +57,6 @@ export const AddClothesForm = () => {
         onChange={(event) => onChange(event)}
         />
         <br/>
-
         <label>Brand:</label>
         <input
           placeholder="Brand:"
@@ -65,7 +64,6 @@ export const AddClothesForm = () => {
           onChange={(event) => onChange(event)}
         />
         <br />
-
         <label>Condition:</label>
         <input
           placeholder="Condition:"
@@ -73,7 +71,6 @@ export const AddClothesForm = () => {
           onChange={(event) => onChange(event)}
         />
         <br />
-
         <label>Item Type:</label>
         <input
           placeholder="Item Type:"
@@ -81,7 +78,6 @@ export const AddClothesForm = () => {
           onChange={(event) => onChange(event)}
         />
         <br />
-
         <label>Size:</label>
         <input
           placeholder="Size:"
@@ -89,7 +85,6 @@ export const AddClothesForm = () => {
           onChange={(event) => onChange(event)}
         />
         <br />
-
         <label>Description:</label>
         <input
           placeholder="Description:"
@@ -97,7 +92,7 @@ export const AddClothesForm = () => {
           onChange={(event) => onChange(event)}
         />
         <br />
-
+        <label>Upload Images:</label>
         <input type="file" name="image" onChange={(event) => onChange(event)} />
         <br />
 
