@@ -6,11 +6,13 @@ import { Button } from '@material-ui/core';
 
 export const Register = () => {
 
+    const BACKEND_URL = 'https://yours-mine.herokuapp.com';
+
     const handleSubmit = (event) => {
         event.preventDefault();
         debugger
         console.log(registerObject);
-            axios.post('http://localhost:3333/api/auth/register', registerObject)
+            axios.post(`${BACKEND_URL}/api/auth/register`, registerObject)
             .then(response => {
                 setRegisterObject(response.data);
                 history.push('/login');

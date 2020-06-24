@@ -1,0 +1,6 @@
+.main-clothes-container{
+    background-color: red;
+    margin: auto 0;
+    display: flex;
+    flex-wrap: wrap;
+}

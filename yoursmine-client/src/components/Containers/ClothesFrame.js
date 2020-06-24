@@ -21,7 +21,7 @@ export const ClothesFrame = ( propsFromMarketPlace ) => {
             <p>Item Type:</p>
             <h4> { item.itemType }</h4>
 
-            <h4> { item.image } </h4>
+            {/* <h4> { item.image } </h4> */}
             <p>Size:</p>
             <h4> { item.size } </h4>
             <button 
