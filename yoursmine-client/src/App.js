@@ -15,10 +15,12 @@ import { ClothesFrame } from "./components/Containers/ClothesFrame";
 
 function App() {
 
+  console.log(`${process.env.BASE_BACKEND_URL}`);
+  
   const [clothes, setClothes] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:3333/api/clothes/allClothes")
+      .get(`${process.env.BASE_BACKEND_URL}/api/clothes/allClothes`)
       .then((res) => {
         setClothes(res.data);
       })

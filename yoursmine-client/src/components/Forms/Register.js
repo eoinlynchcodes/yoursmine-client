@@ -6,13 +6,12 @@ import { Button } from '@material-ui/core';
 
 export const Register = () => {
 
-    const BACKEND_URL = 'https://yours-mine.herokuapp.com';
-
     const handleSubmit = (event) => {
+        console.log()
         event.preventDefault();
         debugger
         console.log(registerObject);
-            axios.post(`${BACKEND_URL}/api/auth/register`, registerObject)
+            axios.post(`${process.env.BASE_BACKEND_URL}/api/auth/register`, registerObject)
             .then(response => {
                 setRegisterObject(response.data);
                 history.push('/login');
@@ -21,6 +20,7 @@ export const Register = () => {
                 console.log(error);
             })  
     }
+    
     
     const [ registerObject, setRegisterObject ] = useState({
         firstName: '',
